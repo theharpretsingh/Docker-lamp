@@ -9,6 +9,8 @@ services:
       - MYSQL_ROOT_PASSWORD=rootpassword
     networks:
       - lamp-docker
+    volumes:
+      - "./:/docker-entrypoint-initdb.d"
   www:
     depends_on:
       - db
